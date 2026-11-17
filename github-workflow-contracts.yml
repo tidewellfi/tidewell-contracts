@@ -1,0 +1,39 @@
+name: Contracts
+
+on:
+  push:
+    paths:
+      - "contracts/**"
+      - ".github/workflows/contracts.yml"
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Tests (local and against a copy of Robinhood Chain)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: contracts
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: stable
+
+      - name: Libraries
+        run: bash install-deps.sh
+
+      - name: Build
+        run: forge build --sizes
+
+      - name: Tests on real Uniswap code
+        run: forge test --no-match-path "test/fork/*" -vv
+
+      - name: Tests against a copy of Robinhood Chain mainnet
+        env:
+          # Optional: set a repository secret RH_RPC_URL (for example an Alchemy URL) for a faster, unthrottled node.
+          RH_RPC_URL: ${{ secrets.RH_RPC_URL }}
+        run: |
+          RPC="${RH_RPC_URL:-https://rpc.mainnet.chain.robinhood.com}"
+          forge test --match-path "test/fork/*" --fork-url "$RPC" --fork-retries 5 --fork-retry-backoff 2000 -vvv
