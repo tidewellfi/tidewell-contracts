@@ -4,7 +4,7 @@ pragma solidity 0.8.28;
 import {Test} from "forge-std/Test.sol";
 import {TidewellDeploy} from "../script/Deploy.s.sol";
 import {TheWell} from "../src/TheWell.sol";
-import {MockERC20} from "./mocks/Mocks.sol";
+import {MockERC20} from "./mocks/Mocks.t.sol";
 import {TidewellFactory} from "../src/TidewellFactory.sol";
 
 contract DeployTest is Test, TidewellDeploy {

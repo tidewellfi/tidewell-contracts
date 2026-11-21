@@ -19,7 +19,7 @@ import {TidewellSwapper} from "../src/TidewellSwapper.sol";
 import {TidewellVaultBase} from "../src/TidewellVaultBase.sol";
 import {TidewellVaultV3} from "../src/TidewellVaultV3.sol";
 import {TidewellVaultV4, IPositionManagerV4} from "../src/TidewellVaultV4.sol";
-import {MockERC20, MockFeed, MockSink, MockPonsEscrow, MockPonsLaunches, MockPonsCurve, MockRouter} from "./mocks/Mocks.sol";
+import {MockERC20, MockFeed, MockSink, MockPonsEscrow, MockPonsLaunches, MockPonsCurve, MockRouter} from "./mocks/Mocks.t.sol";
 import {Reserve} from "../src/Reserve.sol";
 import {RevenueRouter} from "../src/RevenueRouter.sol";
 import {ReferralRegistry} from "../src/ReferralRegistry.sol";

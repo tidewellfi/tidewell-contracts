@@ -21,7 +21,7 @@ import {TidewellVaultV3} from "../src/TidewellVaultV3.sol";
 import {TidewellShapedVaultV4} from "../src/TidewellShapedVaultV4.sol";
 import {IPositionManagerV4S as IPositionManagerV4} from "../src/libraries/ShapesV4.sol";
 import {Shapes} from "../src/libraries/Shapes.sol";
-import {MockERC20, MockFeed, MockSink, MockPonsEscrow, MockPonsLaunches, MockPonsCurve, MockRouter} from "./mocks/Mocks.sol";
+import {MockERC20, MockFeed, MockSink, MockPonsEscrow, MockPonsLaunches, MockPonsCurve, MockRouter} from "./mocks/Mocks.t.sol";
 import {Reserve} from "../src/Reserve.sol";
 import {RevenueRouter} from "../src/RevenueRouter.sol";
 import {ReferralRegistry} from "../src/ReferralRegistry.sol";

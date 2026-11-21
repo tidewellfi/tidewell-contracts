@@ -4,7 +4,7 @@ pragma solidity 0.8.28;
 import {Test} from "forge-std/Test.sol";
 import {TheWell} from "../src/TheWell.sol";
 import {Reserve} from "../src/Reserve.sol";
-import {MockERC20, MockDiscount} from "./mocks/Mocks.sol";
+import {MockERC20, MockDiscount} from "./mocks/Mocks.t.sol";
 
 contract WellTest is Test {
     TheWell well;

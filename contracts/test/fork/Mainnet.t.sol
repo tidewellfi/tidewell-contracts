@@ -19,7 +19,7 @@ import {RevenueRouter} from "../../src/RevenueRouter.sol";
 import {ReferralRegistry} from "../../src/ReferralRegistry.sol";
 import {BuybackBurner} from "../../src/BuybackBurner.sol";
 import {IUniswapV3Factory, IUniswapV3Pool, INonfungiblePositionManager} from "../../src/interfaces/IUniswapV3.sol";
-import {Trader} from "../mocks/Mocks.sol";
+import {Trader} from "../mocks/Mocks.t.sol";
 import {V4Trader} from "../VaultV4.t.sol";
 
 interface IPonsEscrowView {
